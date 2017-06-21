@@ -20,6 +20,8 @@ export const register: PluginFunction<{}> = function(server, options, next) {
       }
     };
   });
+
+  return next();
 };
 
 register.attributes = {
