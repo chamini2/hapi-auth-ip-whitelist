@@ -1,10 +1,10 @@
-import { Server } from 'hapi';
+import { PluginFunction } from 'hapi';
 import { isEqual as ipIsEqual } from 'ip';
 import { unauthorized } from 'boom';
 import castArray = require('lodash.castarray');
 import some = require('lodash.some');
 
-export function register<Options>(server: Server, options: Options, next: (err?: Error) => void): void {
+export const register: PluginFunction<{}> = function(server, options, next) {
   server.auth.scheme('ip-whitelist', function(server, whitelisted: string | string[]) {
     const list = castArray(whitelisted);
 
@@ -22,6 +22,6 @@ export function register<Options>(server: Server, options: Options, next: (err?:
   });
 };
 
-exports.register.attributes = {
+register.attributes = {
   pkg: require('../package.json')
-};
+}
