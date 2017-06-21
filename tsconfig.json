@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "strict": true,
+    "baseUrl": "./src",
+    "outDir": "lib",
+    "declaration": true,
+    "module": "commonjs",
+    "target": "ES5"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
