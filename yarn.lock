@@ -75,9 +75,11 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/podium/-/podium-1.0.0.tgz#bfaa2151be2b1d6109cc69f7faa9dac2cba3bb20"
 
-"@types/request-ip@0.0.31":
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/@types/request-ip/-/request-ip-0.0.31.tgz#f4a6b23b4823a4ec47997e543ea32233a9dc7d9b"
+"@types/request-ip@^0.0.33":
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/@types/request-ip/-/request-ip-0.0.33.tgz#4c4a16f8b27a4ed906470fdac64168bc4de6c295"
+  dependencies:
+    "@types/node" "*"
 
 "@types/shot@*":
   version "3.4.0"
@@ -118,5 +120,5 @@ request-ip@^2.0.2:
     is_js "^0.9.0"
 
 typescript@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
