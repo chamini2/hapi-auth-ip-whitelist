@@ -2,28 +2,34 @@
 
 [![npm](https://img.shields.io/npm/v/hapi-auth-ip-whitelist.svg)](https://www.npmjs.com/package/hapi-auth-ip-whitelist)
 
-# Usage
+## Usage
 
-## Localhost
+### Localhost
 
 Only accept calls from localhost:
 
 ```js
-server.auth.strategy('localhost', 'ip-whitelist', '127.0.0.1');
+server.auth.strategy('localhost', 'ip-whitelist', ['127.0.0.1']);
 ```
+
+NOTE: Third parameter of server.auth.strategy is options which must be an object. 
 
 To be used like
 
 ```js
-server.route({ method: 'GET', path: '/', config: {
-  auth: 'localhost',
-  handler: function(request, reply) { reply("That was from localhost!");}
-}});
+server.route({ 
+	method: 'GET', 
+	path: '/',
+	handler(request, h) { return "That was from localhost!" }, 
+	options: {
+        auth: 'localhost'
+	}
+});
 ```
 
 In the route receives a request from a different IP, it will respond a `401 unauthorized` error with the message `192.168.0.102 is not a valid IP`, where `192.168.0.102` is the IP of the request.
 
-## MercadoPago
+### MercadoPago
 
 You can also specify several IPs by passing a list instead. For example, consider the IPs to expect requests from, as specified by [MercadoPago](https://www.mercadopago.com.co/developers/en/api-docs/basics/design-considerations).
 
@@ -37,3 +43,16 @@ server.auth.strategy(
   )
 );
 ```
+
+## Example server
+
+Start local example server with
+
+```bash
+npm start
+```
+
+then visit [http://localhost:3000](http://localhost:3000).
+
+Successfully authenticated request [http://localhost:3000/authenticated](http://localhost:3000/authenticated).
+Unauthenticated request [http://localhost:3000/unauthenticated](http://localhost:3000/unauthenticated).
