@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-ip-whitelist",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Hapi.js plugin for authentication scheme of accepting connections only from certain IPs",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -16,7 +16,7 @@
     "@types/ip": "^0.0.30",
     "@types/request-ip": "^0.0.33",
     "typescript": "^2.6.2",
-	"hapi": "^17.2.0"
+    "hapi": "^17.2.0"
   },
   "dependencies": {
     "boom": "^7.1.1",
@@ -24,6 +24,6 @@
     "request-ip": "^2.0.2"
   },
   "peerDependencies": {
-	"hapi": ">= 17"
+    "hapi": ">= 17"
   }
 }
