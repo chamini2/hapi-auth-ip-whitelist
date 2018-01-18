@@ -1,27 +1,29 @@
-import { PluginFunction } from 'hapi';
 import { isEqual as ipIsEqual } from 'ip';
-import { getClientIp } from 'request-ip';
+import { getClientIp, Request as RequestInterface } from 'request-ip';
 import { unauthorized } from 'boom';
+const pkg = require('../package.json');
 
-export const register: PluginFunction<{}> = function(server, options, next) {
-  server.auth.scheme('ip-whitelist', function(server, whitelisted: string | string[]) {
-    const list = whitelisted instanceof Array ? whitelisted : [whitelisted];
-
-    return {
-      authenticate(request, reply) {
-        const remoteAddress = getClientIp(request);
-        if (list.some(address => ipIsEqual(remoteAddress, address))) {
-          reply.continue({ credentials: remoteAddress });
-        } else {
-          reply(unauthorized(`${remoteAddress} is not a valid IP`));
-        }
-      }
-    };
-  });
-
-  return next();
+export default {
+	name: pkg.name,
+	version: pkg.version,
+	pkg,
+	register(server:any, options:object) {
+		server.auth.scheme('ip-whitelist', ipWhitelistScheme)
+	}
 };
 
-register.attributes = {
-  pkg: require('../package.json')
+function ipWhitelistScheme(server:any, whitelisted: string | string[]) {
+	return {
+		authenticate(request:RequestInterface, h:any) {
+			const remoteAddress:string = getClientIp(request)
+
+			const list = whitelisted instanceof Array ? whitelisted : [whitelisted];
+			if (list.some((ip:string) => ipIsEqual(ip, remoteAddress))) {
+				return h.authenticated({ credentials: remoteAddress })
+			}
+
+			throw unauthorized(`${remoteAddress} is not a valid IP`)
+		}
+	}
 }
+
