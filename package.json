@@ -26,5 +26,8 @@
     "request-ip": "^2.0.2",
     "lodash.castarray": "^4.4.0",
     "lodash.some": "^4.6.0"
+  },
+  "peerDependencies": {
+	"hapi": "< 17"
   }
 }
