@@ -2,24 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/boom@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@types/boom/-/boom-7.1.1.tgz#2cb2d59600bf67a341d962921cbf2943f758ff6e"
-
-"@types/ip@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@types/ip/-/ip-0.0.30.tgz#60c3309ce1cecdd7293245bbffc201ecb6f8c344"
-
-"@types/node@*":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.1.tgz#89c271e0c3b9ebb6a3756dd601336970b6228b77"
-
-"@types/request-ip@^0.0.33":
-  version "0.0.33"
-  resolved "https://registry.yarnpkg.com/@types/request-ip/-/request-ip-0.0.33.tgz#4c4a16f8b27a4ed906470fdac64168bc4de6c295"
-  dependencies:
-    "@types/node" "*"
-
 accept@3.x.x:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/accept/-/accept-3.0.2.tgz#83e41cec7e1149f3fd474880423873db6c6cc9ac"
@@ -243,10 +225,6 @@ topo@3.x.x:
   resolved "https://registry.yarnpkg.com/topo/-/topo-3.0.0.tgz#37e48c330efeac784538e0acd3e62ca5e231fe7a"
   dependencies:
     hoek "5.x.x"
-
-typescript@^2.3.4:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 
 vise@3.x.x:
   version "3.0.0"
