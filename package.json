@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-ip-whitelist",
-  "version": "0.1.0",
+  "version": "0.0.5",
   "description": "Hapi.js plugin for authentication scheme of accepting connections only from certain IPs",
   "main": "lib/index.js",
   "repository": "https://github.com/chamini2/hapi-auth-ip-whitelist",
