@@ -15,12 +15,10 @@
     "@types/boom": "^4.3.5",
     "@types/hapi": "^16.1.5",
     "@types/ip": "^0.0.30",
-    "@types/lodash.some": "^4.6.2",
     "typescript": "^2.3.4"
   },
   "dependencies": {
     "boom": "^5.1.0",
-    "ip": "^1.1.5",
-    "lodash.some": "^4.6.0"
+    "ip": "^1.1.5"
   }
 }
