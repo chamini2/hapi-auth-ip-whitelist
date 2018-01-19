@@ -125,10 +125,6 @@ iron@5.x.x:
     cryptiles "4.x.x"
     hoek "5.x.x"
 
-is_js@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/is_js/-/is_js-0.9.0.tgz#0ab94540502ba7afa24c856aa985561669e9c52d"
-
 isemail@3.x.x:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/isemail/-/isemail-3.1.0.tgz#d15156d67529d48241bc0e644df28281e21dd458"
@@ -181,12 +177,6 @@ podium@3.x.x:
 punycode@2.x.x:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
-
-request-ip@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/request-ip/-/request-ip-2.0.2.tgz#deeae6d4af21768497db8cd05fa37143f8f1257e"
-  dependencies:
-    is_js "^0.9.0"
 
 shot@4.x.x:
   version "4.0.4"
