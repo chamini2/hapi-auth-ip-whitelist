@@ -1,5 +1,6 @@
 const Hapi = require('hapi');
-const plugin = require('./lib/index');
+const TheRealYou = require('therealyou');
+const plugin = require('./lib');
 const moduleName = require('./package').name;
 
 const server = new Hapi.Server({
@@ -16,7 +17,14 @@ const server = new Hapi.Server({
 });
 
 // register plugin
-server.register(plugin.default)
+server.register([
+	{
+		plugin: TheRealYou
+	},
+	{
+		plugin
+	}
+])
 	.then(() => {
 		// specify auth strategies
 		server.auth.strategy('localhost', 'ip-whitelist', ['127.0.0.1']);
