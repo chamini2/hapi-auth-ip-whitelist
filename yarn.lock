@@ -32,21 +32,15 @@
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/@types/joi/-/joi-10.4.0.tgz#a4de40cdf2462c7e1c83eb47ca3e19177bcc2ae8"
 
-"@types/lodash.castarray@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@types/lodash.castarray/-/lodash.castarray-4.4.2.tgz#c6d35fa055904dafe819f8d0768d633bd14da2e6"
-  dependencies:
-    "@types/lodash" "*"
-
 "@types/lodash.some@^4.6.2":
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/@types/lodash.some/-/lodash.some-4.6.2.tgz#d0d167ab83417cf4d574cdf4caa218ffba32ca00"
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/@types/lodash.some/-/lodash.some-4.6.3.tgz#700f3ba9552c1e8ee1f304566985d1bb0399df75"
   dependencies:
     "@types/lodash" "*"
 
 "@types/lodash@*":
-  version "4.14.66"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.66.tgz#3dbb83477becf130611f8fac82a8fdb199805981"
+  version "4.14.93"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.93.tgz#a6d2a1e1601a3c29196f38ef1990b68a9afa1e1c"
 
 "@types/mime-db@*":
   version "1.27.0"
@@ -85,10 +79,6 @@ hoek@4.x.x:
 ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
-
-lodash.castarray@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.castarray/-/lodash.castarray-4.4.0.tgz#c02513515e309daddd4c24c60cfddcf5976d9115"
 
 lodash.some@^4.6.0:
   version "4.6.0"
