@@ -15,12 +15,12 @@
     "@types/boom": "^4.3.7",
     "@types/hapi": "^16.1.12",
     "@types/ip": "^0.0.30",
-    "typescript": "^2.3.4"
+    "typescript": "^2.6.2"
   },
   "dependencies": {
     "boom": "^5.2.0",
     "ip": "^1.1.5"
-  }
+  },
   "peerDependencies": {
 	"hapi": "< 17"
   }
