@@ -2,9 +2,9 @@
 
 [![npm](https://img.shields.io/npm/v/hapi-auth-ip-whitelist.svg)](https://www.npmjs.com/package/hapi-auth-ip-whitelist)
 
-# Usage
+## Usage
 
-## Localhost
+### Localhost
 
 Only accept calls from localhost:
 
@@ -23,7 +23,7 @@ server.route({ method: 'GET', path: '/', config: {
 
 In the route receives a request from a different IP, it will respond a `401 unauthorized` error with the message `192.168.0.102 is not a valid IP`, where `192.168.0.102` is the IP of the request.
 
-## MercadoPago
+### MercadoPago
 
 You can also specify several IPs by passing a list instead. For example, consider the IPs to expect requests from, as specified by [MercadoPago](https://www.mercadopago.com.co/developers/en/api-docs/basics/design-considerations).
 
@@ -36,4 +36,16 @@ server.auth.strategy(
     (part) => _.times(256, (n) => _.replace(part, '*', _.toString(n)))
   )
 );
+```
+
+### Behind proxy
+
+In case you are behind a proxy, use Hapi plugin `therealyou`.
+It will find the "real" IP in X-Forward headers and modify the request.info.remoteAddress.
+
+```js
+server.register([
+	require('therealyou'),
+	require('hapi-auth-ip-whitelist')
+])
 ```

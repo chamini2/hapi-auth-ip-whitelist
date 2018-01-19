@@ -1,18 +1,15 @@
-import { PluginFunction } from 'hapi';
+import { PluginFunction, Request, Server, ReplySchemeAuth } from 'hapi';
 import { isEqual as ipIsEqual } from 'ip';
 import { unauthorized } from 'boom';
-import castArray = require('lodash.castarray');
-import some = require('lodash.some');
 
-export const register: PluginFunction<{}> = function(server, options, next) {
-  server.auth.scheme('ip-whitelist', function(server, whitelisted: string | string[]) {
-    const list = castArray(whitelisted);
+export const register: PluginFunction<{}> = function(server: Server, options, next) {
+  server.auth.scheme('ip-whitelist', function(serverAuth: Server, whitelisted: string | string[]) {
+    const list = whitelisted instanceof Array ? whitelisted : [whitelisted];
 
     return {
-      authenticate(request, reply) {
-        // in case you are behind a proxy, use Hapi plugin `therealyou`
+      authenticate(request: Request, reply: ReplySchemeAuth) {
         const { remoteAddress } = request.info;
-        if (some(list, (address) => ipIsEqual(remoteAddress, address))) {
+        if (list.some(address => ipIsEqual(remoteAddress, address))) {
           reply.continue({ credentials: remoteAddress });
         } else {
           reply(unauthorized(`${remoteAddress} is not a valid IP`));

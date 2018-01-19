@@ -2,9 +2,13 @@
 # yarn lockfile v1
 
 
-"@types/boom@*", "@types/boom@^4.3.5":
+"@types/boom@*":
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/@types/boom/-/boom-4.3.5.tgz#9ccca31e08c989bce483bd76b2de798526c608f5"
+
+"@types/boom@^4", "@types/boom@^4.3.7":
+  version "4.3.9"
+  resolved "https://registry.yarnpkg.com/@types/boom/-/boom-4.3.9.tgz#6f9adc1074e81cbf01b8d1ed5878aa1ee89bb22d"
 
 "@types/catbox@*":
   version "7.1.1"
@@ -12,12 +16,17 @@
   dependencies:
     "@types/boom" "*"
 
-"@types/hapi@^16.1.5":
-  version "16.1.5"
-  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-16.1.5.tgz#f74aee6207d4efdc37f9c694424a254e639f03be"
+"@types/events@*":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-1.1.0.tgz#93b1be91f63c184450385272c47b6496fd028e02"
+
+"@types/hapi@^16.1.12":
+  version "16.1.12"
+  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-16.1.12.tgz#d51a5834321c71fe9bbd4a51800e83798e9a9f9c"
   dependencies:
-    "@types/boom" "*"
+    "@types/boom" "^4"
     "@types/catbox" "*"
+    "@types/events" "*"
     "@types/joi" "*"
     "@types/mimos" "*"
     "@types/node" "*"
@@ -31,22 +40,6 @@
 "@types/joi@*":
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/@types/joi/-/joi-10.4.0.tgz#a4de40cdf2462c7e1c83eb47ca3e19177bcc2ae8"
-
-"@types/lodash.castarray@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@types/lodash.castarray/-/lodash.castarray-4.4.2.tgz#c6d35fa055904dafe819f8d0768d633bd14da2e6"
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash.some@^4.6.2":
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/@types/lodash.some/-/lodash.some-4.6.2.tgz#d0d167ab83417cf4d574cdf4caa218ffba32ca00"
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash@*":
-  version "4.14.66"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.66.tgz#3dbb83477becf130611f8fac82a8fdb199805981"
 
 "@types/mime-db@*":
   version "1.27.0"
@@ -72,9 +65,9 @@
   dependencies:
     "@types/node" "*"
 
-boom@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/boom/-/boom-5.1.0.tgz#0308fa8e924cd6d42d9c3bf4883bdc98f0e71df8"
+boom@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
   dependencies:
     hoek "4.x.x"
 
@@ -86,14 +79,6 @@ ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
 
-lodash.castarray@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.castarray/-/lodash.castarray-4.4.0.tgz#c02513515e309daddd4c24c60cfddcf5976d9115"
-
-lodash.some@^4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.some/-/lodash.some-4.6.0.tgz#1bb9f314ef6b8baded13b549169b2a945eb68e4d"
-
-typescript@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
+typescript@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
