@@ -9,7 +9,6 @@ export const register: PluginFunction<{}> = function(server:Server, options, nex
 
     return {
       authenticate(request:Request, reply:ReplyWithContinue) {
-        // in case you are behind a proxy, use Hapi plugin `therealyou`
         const { remoteAddress } = request.info;
         if (list.some(address => ipIsEqual(remoteAddress, address))) {
           reply.continue({ credentials: remoteAddress });
