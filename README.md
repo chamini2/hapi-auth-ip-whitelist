@@ -2,8 +2,6 @@
 
 [![npm](https://img.shields.io/npm/v/hapi-auth-ip-whitelist.svg)](https://www.npmjs.com/package/hapi-auth-ip-whitelist)
 
-*NOTE: Version 0.1.0 is compatible only with Hapi v17, use versions < 0.1.0 with Hapi v16 or earlier.*
-
 ## Usage
 
 ### Localhost
