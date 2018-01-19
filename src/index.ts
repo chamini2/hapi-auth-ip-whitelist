@@ -1,13 +1,14 @@
-import { PluginFunction } from 'hapi';
+import { PluginFunction, Request, Server, ReplyWithContinue } from 'hapi';
 import { isEqual as ipIsEqual } from 'ip';
 import { unauthorized } from 'boom';
 
-export const register: PluginFunction<{}> = function(server, options, next) {
-  server.auth.scheme('ip-whitelist', function(server, whitelisted: string | string[]) {
-    const list = whitelisted instanceof Array ? whitelisted : [whitelisted]
+export const register: PluginFunction<{}> = function(server:Server, options, next) {
+  server.auth.scheme('ip-whitelist', function(serverAuth:Server, whitelisted: string | string[]) {
+    const list = whitelisted instanceof Array ? whitelisted : [whitelisted];
+    //const list = [].concat(whitelisted); // TypeScript compiler complains but generates correct code
 
     return {
-      authenticate(request, reply) {
+      authenticate(request:Request, reply:ReplyWithContinue) {
         // in case you are behind a proxy, use Hapi plugin `therealyou`
         const { remoteAddress } = request.info;
         if (list.some(address => ipIsEqual(remoteAddress, address))) {
