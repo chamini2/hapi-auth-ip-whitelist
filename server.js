@@ -37,7 +37,7 @@ server.register([
 				path: '/',
 				handler(request, h) {
 					const url = request.server.info.uri
-					return `Visit ${url}/authenticated to test successfully authenticated request or ${url}/unauthenticated to test unathenticated request.`;
+					return `Visit ${url}/authenticated to test successfully authenticated request or ${url}/unauthenticated to test unauthenticated request.`;
 				},
 				options: {
 					auth: false
@@ -57,7 +57,7 @@ server.register([
 				method: 'GET',
 				path: '/unauthenticated',
 				handler(request, h) {
-					return 'This should not happen, should get 401 unathenticated!';
+					return 'This should not happen, should get 401 unauthenticated!';
 				},
 				options: {
 					auth: 'ip_outside_our_control'
