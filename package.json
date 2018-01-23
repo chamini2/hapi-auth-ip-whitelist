@@ -15,5 +15,8 @@
   },
   "peerDependencies": {
 	"hapi": ">= 17"
+  },
+  "engines": {
+	"node": ">=8.9.0"
   }
 }
