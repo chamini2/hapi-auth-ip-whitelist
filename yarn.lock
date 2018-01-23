@@ -2,6 +2,7 @@
 # yarn lockfile v1
 
 
+<<<<<<< HEAD
 accept@3.x.x:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/accept/-/accept-3.0.2.tgz#83e41cec7e1149f3fd474880423873db6c6cc9ac"
@@ -31,6 +32,17 @@ boom@6.x.x:
     hoek "5.x.x"
 
 boom@7.x.x, boom@^7.1.1:
+=======
+"@types/boom@*":
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/@types/boom/-/boom-4.3.5.tgz#9ccca31e08c989bce483bd76b2de798526c608f5"
+
+"@types/boom@^4", "@types/boom@^4.3.7":
+  version "4.3.9"
+  resolved "https://registry.yarnpkg.com/@types/boom/-/boom-4.3.9.tgz#6f9adc1074e81cbf01b8d1ed5878aa1ee89bb22d"
+
+"@types/catbox@*":
+>>>>>>> 4f526f08d3120fb8299ce867ec9e5bdd21629273
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/boom/-/boom-7.1.1.tgz#50392a4e3417e971f1ad28622c20e832275260bb"
   dependencies:
@@ -43,12 +55,31 @@ bounce@1.x.x:
     boom "7.x.x"
     hoek "5.x.x"
 
+<<<<<<< HEAD
 call@5.x.x:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/call/-/call-5.0.1.tgz#ac1b5c106d9edc2a17af2a4a4f74dd4f0c06e910"
   dependencies:
     boom "7.x.x"
     hoek "5.x.x"
+=======
+"@types/events@*":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-1.1.0.tgz#93b1be91f63c184450385272c47b6496fd028e02"
+
+"@types/hapi@^16.1.12":
+  version "16.1.12"
+  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-16.1.12.tgz#d51a5834321c71fe9bbd4a51800e83798e9a9f9c"
+  dependencies:
+    "@types/boom" "^4"
+    "@types/catbox" "*"
+    "@types/events" "*"
+    "@types/joi" "*"
+    "@types/mimos" "*"
+    "@types/node" "*"
+    "@types/podium" "*"
+    "@types/shot" "*"
+>>>>>>> 4f526f08d3120fb8299ce867ec9e5bdd21629273
 
 catbox-memory@3.x.x:
   version "3.1.1"
@@ -73,6 +104,7 @@ content@4.x.x:
   dependencies:
     boom "7.x.x"
 
+<<<<<<< HEAD
 cryptiles@4.x.x:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-4.1.1.tgz#169256b9df9fe3c73f8085c99e30b32247d4ab46"
@@ -124,6 +156,11 @@ iron@5.x.x:
     boom "7.x.x"
     cryptiles "4.x.x"
     hoek "5.x.x"
+=======
+"@types/mime-db@*":
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/@types/mime-db/-/mime-db-1.27.0.tgz#9bc014a1fd1fdf47649c1a54c6dd7966b8284792"
+>>>>>>> 4f526f08d3120fb8299ce867ec9e5bdd21629273
 
 isemail@3.x.x:
   version "3.1.0"
@@ -185,6 +222,7 @@ shot@4.x.x:
     hoek "5.x.x"
     joi "13.x.x"
 
+<<<<<<< HEAD
 statehood@6.x.x:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/statehood/-/statehood-6.0.5.tgz#bbcdcb3a43a6fb86f4bd04ed48a9309b6cfc1b18"
@@ -199,6 +237,11 @@ statehood@6.x.x:
 subtext@6.x.x:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/subtext/-/subtext-6.0.7.tgz#8e40a67901a734d598142665c90e398369b885f9"
+=======
+boom@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
+>>>>>>> 4f526f08d3120fb8299ce867ec9e5bdd21629273
   dependencies:
     boom "7.x.x"
     content "4.x.x"
@@ -214,6 +257,7 @@ therealyou@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/therealyou/-/therealyou-2.0.0.tgz#5600361913db664cbd393b84d11d73b8f65e5198"
 
+<<<<<<< HEAD
 topo@3.x.x:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/topo/-/topo-3.0.0.tgz#37e48c330efeac784538e0acd3e62ca5e231fe7a"
@@ -232,3 +276,8 @@ wreck@14.x.x:
   dependencies:
     boom "7.x.x"
     hoek "5.x.x"
+=======
+typescript@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
+>>>>>>> 4f526f08d3120fb8299ce867ec9e5bdd21629273
