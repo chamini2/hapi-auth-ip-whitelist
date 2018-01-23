@@ -50,5 +50,12 @@ In case you are behind a proxy, use Hapi plugin `therealyou`.
 It will find the "real" IP in X-Forward headers and modify the request.info.remoteAddress.
 
 ```js
-server.register(require('hapi-auth-ip-whitelist'))
+server.register([
+	{
+		plugin: require('therealyou')
+	},
+	{
+		plugin: require('hapi-auth-ip-whitelist')
+	}
+])
 ```
