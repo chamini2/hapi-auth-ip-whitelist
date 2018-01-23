@@ -51,7 +51,6 @@ It will find the "real" IP in X-Forward headers and modify the request.info.remo
 
 ```js
 server.register([
-<<<<<<< HEAD
 	{
 		plugin: require('therealyou')
 	},
@@ -73,9 +72,3 @@ then visit [http://localhost:3000](http://localhost:3000).
 
 Successfully authenticated request [http://localhost:3000/authenticated](http://localhost:3000/authenticated).
 Unauthenticated request [http://localhost:3000/unauthenticated](http://localhost:3000/unauthenticated).
-=======
-	require('therealyou'),
-	require('hapi-auth-ip-whitelist')
-])
-```
->>>>>>> 4f526f08d3120fb8299ce867ec9e5bdd21629273
