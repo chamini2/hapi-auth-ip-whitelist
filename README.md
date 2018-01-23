@@ -59,3 +59,16 @@ server.register([
 	}
 ])
 ```
+
+## Example server
+
+Start local example server with
+
+```bash
+npm start
+```
+
+then visit [http://localhost:3000](http://localhost:3000).
+
+Successfully authenticated request [http://localhost:3000/authenticated](http://localhost:3000/authenticated).
+Unauthenticated request [http://localhost:3000/unauthenticated](http://localhost:3000/unauthenticated).
