@@ -15,7 +15,11 @@
     "ip": "^1.1.5"
   },
   "peerDependencies": {
+<<<<<<< HEAD
     "hapi": ">= 17"
+=======
+	"hapi": ">= 17"
+>>>>>>> 5a7404144ca9edd2fbe6cd3de22165a28619817d
   },
   "optionalDependencies": {
 	"therealyou": "^2.0.0"
