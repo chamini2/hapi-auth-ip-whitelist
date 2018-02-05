@@ -18,12 +18,10 @@ To be used like
 
 ```js
 server.route({ 
-	method: 'GET', 
-	path: '/',
-	handler(request, h) { return "That was from localhost!" }, 
-	options: {
-        auth: 'localhost'
-	}
+  method: 'GET', 
+  path: '/',
+  handler(request, h) { return "That was from localhost!" }, 
+  options: { auth: 'localhost' }
 });
 ```
 
@@ -51,12 +49,12 @@ It will find the "real" IP in X-Forward headers and modify the request.info.remo
 
 ```js
 server.register([
-	{
-		plugin: require('therealyou')
-	},
-	{
-		plugin: require('hapi-auth-ip-whitelist')
-	}
+  {
+    plugin: require('therealyou')
+  },
+  {
+    plugin: require('hapi-auth-ip-whitelist')
+  }
 ])
 ```
 
