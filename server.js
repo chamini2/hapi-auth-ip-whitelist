@@ -17,9 +17,12 @@ const server = new Hapi.Server({
 
 // register plugin
 server.register([
+  // Uncomment to get correct IP of client when running behind a proxy, therealyou is entirely optional
+  /*
   {
     plugin: require('therealyou')
   },
+  */
   {
     plugin
   }
