@@ -27,20 +27,20 @@ server.route({
 
 In the route receives a request from a different IP, it will respond a `401 unauthorized` error with the message `192.168.0.102 is not a valid IP`, where `192.168.0.102` is the IP of the request.
 
-### MercadoPago
+### Address ranges
 
-You can also specify several IPs by passing a list instead. For example, consider the IPs to expect requests from, as specified by [MercadoPago](https://www.mercadopago.com.co/developers/en/api-docs/basics/design-considerations).
+You can also specify several IPs by passing a list instead. [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation is supported. 
+
+For example, consider the IPs to expect requests from, as specified by [MercadoPago](https://www.mercadopago.com.co/developers/en/api-docs/basics/design-considerations).
 
 ```js
 server.auth.strategy(
   'mercado-pago-webhook',
   'ip-whitelist',
-  _.flatMap(
-    ['209.225.49.*', '216.33.197.*', '216.33.196.*', '63.128.82.*', '63.128.83.*', '63.128.94.*'],
-    (part) => _.times(256, (n) => _.replace(part, '*', _.toString(n)))
-  )
+  ['209.225.49.0/24', '216.33.197.0/24', '216.33.196.0/24', '63.128.82.0/24', '63.128.83.0/24', '63.128.94.0/24']  
 );
 ```
+
 
 ### Behind proxy
 
