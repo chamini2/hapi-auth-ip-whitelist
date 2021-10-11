@@ -1,4 +1,5 @@
 const Hapi = require('hapi')
+const ipLib = require('ip')
 const plugin = require('./lib')
 const moduleName = require('./package').name
 
@@ -29,6 +30,7 @@ server.register([
 ])
   .then(() => {
     // specify auth strategies
+    server.auth.strategy('local_network', 'ip-whitelist', ['192.168.0.0/23']) // Use CIDR
     server.auth.strategy('localhost', 'ip-whitelist', ['127.0.0.1'])
     server.auth.strategy('ip_outside_our_control', 'ip-whitelist', ['8.8.8.8'])  // only allow IP that will never visit
   })
@@ -38,8 +40,18 @@ server.register([
         method: 'GET',
         path: '/',
         handler(request, h) {
-          const url = request.server.info.uri
-          return `Visit ${url}/authenticated to test successfully authenticated request or ${url}/unauthenticated to test unauthenticated request.`
+          const {host, port} = request.server.info
+          const localip = ipLib.address()
+          const localhostUrl = `${host}:${port}/localhost`
+          const localNetWorkUrl = `${localip}:${port}/local`
+          const unauthUrl = `${host}:${port}/unauth`
+          return `
+          <ul>
+          <li>Visit <a href="//${localhostUrl}">${localhostUrl}</a> to test successfully authenticated requests.</li>
+          <li>Visit <a href="//${localNetWorkUrl}">${localNetWorkUrl}</a> to test CIDR requests, it should work from other computers in your network too.</li>
+          <li>Visit <a href="//${unauthUrl}">${unauthUrl}</a> to test a rejection because of an unauthorized requests.</li>
+          </ul>
+          `
         },
         options: {
           auth: false
@@ -47,9 +59,19 @@ server.register([
       },
       {
         method: 'GET',
-        path: '/authenticated',
+        path: '/local',
         handler(request, h) {
-          return 'Authenticated request!'
+          return `Authorized request from ${request.auth.credentials}`
+        },
+        options: {
+          auth: 'local_network'
+        }
+      },
+      {
+        method: 'GET',
+        path: '/localhost',
+        handler(request, h) {
+          return `Authorized request from ${request.auth.credentials}`
         },
         options: {
           auth: 'localhost'
@@ -57,9 +79,9 @@ server.register([
       },
       {
         method: 'GET',
-        path: '/unauthenticated',
+        path: '/unauth',
         handler(request, h) {
-          return 'This should not happen, should get 401 unauthenticated!'
+          return 'This should not happen, should get 401 unauthorized!'
         },
         options: {
           auth: 'ip_outside_our_control'
