@@ -7,13 +7,13 @@
   "author": "Matteo Ferrando <matteo.ferrando2@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "hapi": "^17.2.0"
+    "@hapi/hapi": "^17.2.0"
   },
   "dependencies": {
-    "boom": "^7.1.1",
+    "@hapi/boom": "^7.1.1",
     "ip": "^1.1.5"
   },
   "peerDependencies": {
-    "hapi": ">= 17"
+    "@hapi/hapi": ">= 17"
   }
 }
